@@ -1,5 +1,5 @@
 # FinanceDashboard
-Finance dashboard
+
 This AI-Powered Personal Finance Dashboard is a web application that helps users track their income, expenses, and savings while providing AI-generated financial insights. The dashboard features transaction management, visual spending analytics, and an AI assistant for personalized financial advice.
 
 Features
