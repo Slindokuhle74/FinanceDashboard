@@ -1,0 +1,461 @@
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f8961e;
+    --danger-color: #f94144;
+    --info-color: #577590;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    z-index: 10;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+nav li {
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--dark-color);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary-color);
+}
+
+nav li.active a {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.ai-assistant {
+    margin-top: auto;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.ai-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.ai-chat {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+
+.ai-message {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+.ai-message.user {
+    background-color: rgba(67, 97, 238, 0.1);
+    text-align: right;
+}
+
+.ai-message.assistant {
+    background-color: #f0f0f0;
+}
+
+.ai-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ai-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.ai-input input:focus {
+    border-color: var(--primary-color);
+}
+
+.ai-input button {
+    padding: 0 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ai-input button:hover {
+    background-color: var(--secondary-color);
+}
+
+main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.trend {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.trend.up {
+    color: var(--success-color);
+}
+
+.trend.down {
+    color: var(--danger-color);
+}
+
+.balance {
+    border-left: 4px solid var(--primary-color);
+}
+
+.income {
+    border-left: 4px solid var(--success-color);
+}
+
+.expenses {
+    border-left: 4px solid var(--danger-color);
+}
+
+.savings {
+    border-left: 4px solid var(--warning-color);
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.chart-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.chart-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.transactions {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.transactions-header h3 {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+#add-transaction {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#add-transaction:hover {
+    background-color: var(--secondary-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    font-weight: 500;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6c757d;
+    transition: color 0.3s;
+}
+
+.actions button:hover {
+    color: var(--primary-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--dark-color);
+}
+
+.modal h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.modal button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        display: flex;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+    }
+    
+    nav li {
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+    }
+    
+    .ai-assistant {
+        margin-top: 1rem;
+    }
+}
